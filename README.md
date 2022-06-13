@@ -22,7 +22,7 @@ SIMAGORA Materials and Product Development Ontology
 - What is an internal parameter?
 - What is an experiment condition?
 - What descriptors can be used by a computing model?
-- What descriptors are used to describe a moleculat structure of the molecule?
+- What descriptors are used to describe a molecule structure?
 - What is a component as molecule?
 - What is the proportion of the components in a formulation?
 
