@@ -79,11 +79,106 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://qudt.org/schema/qudt/hasQuantityKind -->
+
+    <owl:ObjectProperty rdf:about="http://qudt.org/schema/qudt/hasQuantityKind">
+        <rdfs:range rdf:resource="http://qudt.org/schema/qudt/QuantityKind"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://qudt.org/schema/qudt/quantityValue -->
+
+    <owl:ObjectProperty rdf:about="http://qudt.org/schema/qudt/quantityValue">
+        <rdfs:range rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://qudt.org/schema/qudt/unit -->
+
+    <owl:ObjectProperty rdf:about="http://qudt.org/schema/qudt/unit">
+        <rdfs:range rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/SMPDO/createsVirtualExperiment -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/SMPDO/createsVirtualExperiment">
+        <rdfs:domain rdf:resource="https://w3id.org/SMPDO/Formulator"/>
+        <rdfs:range rdf:resource="https://w3id.org/SMPDO/VirtualExperiment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/SMPDO/hasInputExperimentCondition -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/SMPDO/hasInputExperimentCondition">
+        <rdfs:domain rdf:resource="https://w3id.org/SMPDO/Formulation"/>
+        <rdfs:range rdf:resource="https://w3id.org/SMPDO/ExperimentalCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/SMPDO/producesFormulation -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/SMPDO/producesFormulation">
+        <rdfs:domain rdf:resource="https://w3id.org/SMPDO/VirtualExperiment"/>
+        <rdfs:range rdf:resource="https://w3id.org/SMPDO/Formulation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/SMPDO/usesComputingModel -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/SMPDO/usesComputingModel">
+        <rdfs:domain rdf:resource="https://w3id.org/SMPDO/Formulation"/>
+        <rdfs:range rdf:resource="https://w3id.org/SMPDO/ComputingModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://qudt.org/schema/qudt/Quantity -->
+
+    <owl:Class rdf:about="http://qudt.org/schema/qudt/Quantity"/>
+    
+
+
+    <!-- http://qudt.org/schema/qudt/QuantityKind -->
+
+    <owl:Class rdf:about="http://qudt.org/schema/qudt/QuantityKind"/>
+    
+
+
+    <!-- http://qudt.org/schema/qudt/QuantityValue -->
+
+    <owl:Class rdf:about="http://qudt.org/schema/qudt/QuantityValue"/>
+    
+
+
+    <!-- http://qudt.org/schema/qudt/Unit -->
+
+    <owl:Class rdf:about="http://qudt.org/schema/qudt/Unit"/>
     
 
 
@@ -114,6 +209,7 @@
     <!-- https://w3id.org/SMPDO/ExperimentalCondition -->
 
     <owl:Class rdf:about="https://w3id.org/SMPDO/ExperimentalCondition">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/schema/qudt/Quantity"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Experimental Condition</rdfs:label>
     </owl:Class>
     
@@ -138,6 +234,7 @@
     <!-- https://w3id.org/SMPDO/InternalParameter -->
 
     <owl:Class rdf:about="https://w3id.org/SMPDO/InternalParameter">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/schema/qudt/Quantity"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Internal Parameter</rdfs:label>
     </owl:Class>
     
@@ -151,10 +248,26 @@
     
 
 
+    <!-- https://w3id.org/SMPDO/ThermalConductivity -->
+
+    <owl:Class rdf:about="https://w3id.org/SMPDO/ThermalConductivity">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/schema/qudt/Quantity"/>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/SMPDO/VirtualExperiment -->
 
     <owl:Class rdf:about="https://w3id.org/SMPDO/VirtualExperiment">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Virtual Experiment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/SMPDO/Viscosity -->
+
+    <owl:Class rdf:about="https://w3id.org/SMPDO/Viscosity">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/schema/qudt/Quantity"/>
     </owl:Class>
 </rdf:RDF>
 
