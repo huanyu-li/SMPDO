@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/SMPDO#"
+     xml:base="https://w3id.org/SMPDO"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:SMPDO="https://w3id.org/SMPDO/"
+     xmlns:dcterms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://w3id.org/SMPDO">
+        <owl:versionIRI rdf:resource="https://w3id.org/SMPDO/0.1/"/>
+        <dcterms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huanyu Li</dcterms:contributor>
+        <dcterms:created>2022-06-13</dcterms:created>
+        <dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huanyu Li</dcterms:creator>
+        <dcterms:license rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/huanyu-li/SMPDO/blob/main/LICENSE</dcterms:license>
+        <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SIMAGORA Materials and Product Development Ontology</dcterms:title>
+        <rdfs:seeAlso>https://github.com/huanyu-li/SMPDO</rdfs:seeAlso>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
+        <SMPDO:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SMPDO</SMPDO:preferredNamespacePrefix>
+        <SMPDO:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://w3id.org/SMPDO/0.1/</SMPDO:preferredNamespaceUri>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- https://w3id.org/SMPDO/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/SMPDO/preferredNamespacePrefix"/>
+    
+
+
+    <!-- https://w3id.org/SMPDO/preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/SMPDO/preferredNamespaceUri"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/SMPDO/Component -->
+
+    <owl:Class rdf:about="https://w3id.org/SMPDO/Component">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/SMPDO/ComputingModel -->
+
+    <owl:Class rdf:about="https://w3id.org/SMPDO/ComputingModel">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Computing Model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/SMPDO/Descriptor -->
+
+    <owl:Class rdf:about="https://w3id.org/SMPDO/Descriptor">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Descriptor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/SMPDO/ExperimentalCondition -->
+
+    <owl:Class rdf:about="https://w3id.org/SMPDO/ExperimentalCondition">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Experimental Condition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/SMPDO/Formulation -->
+
+    <owl:Class rdf:about="https://w3id.org/SMPDO/Formulation">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Formulation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/SMPDO/Formulator -->
+
+    <owl:Class rdf:about="https://w3id.org/SMPDO/Formulator">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Formulator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/SMPDO/InternalParameter -->
+
+    <owl:Class rdf:about="https://w3id.org/SMPDO/InternalParameter">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Internal Parameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/SMPDO/Simulator -->
+
+    <owl:Class rdf:about="https://w3id.org/SMPDO/Simulator">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Simulator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/SMPDO/VirtualExperiment -->
+
+    <owl:Class rdf:about="https://w3id.org/SMPDO/VirtualExperiment">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Virtual Experiment</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
