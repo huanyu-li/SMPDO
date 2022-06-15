@@ -138,10 +138,18 @@
     
 
 
+    <!-- https://w3id.org/SMPDO/hasConstituent -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/SMPDO/hasConstituent">
+        <rdfs:domain rdf:resource="https://w3id.org/SMPDO/Component"/>
+        <rdfs:range rdf:resource="https://w3id.org/SMPDO/Constituent"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/SMPDO/hasDescriptor -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/SMPDO/hasDescriptor">
-        <rdfs:domain rdf:resource="https://w3id.org/SMPDO/MachineLearningModel"/>
         <rdfs:range rdf:resource="https://w3id.org/SMPDO/Descriptor"/>
     </owl:ObjectProperty>
     
@@ -160,6 +168,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/SMPDO/hasInternalParameter">
         <rdfs:range rdf:resource="https://w3id.org/SMPDO/InternalParameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/SMPDO/hasMolecule -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/SMPDO/hasMolecule">
+        <rdfs:domain rdf:resource="https://w3id.org/SMPDO/Constituent"/>
+        <rdfs:range rdf:resource="http://emmo.info/emmo/middle/materials#EMMO_3397f270_dfc1_4500_8f6f_4d0d85ac5f71"/>
     </owl:ObjectProperty>
     
 
@@ -264,6 +281,15 @@
     
 
 
+    <!-- https://w3id.org/SMPDO/ConstitutentConcentration -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/SMPDO/ConstitutentConcentration">
+        <rdfs:domain rdf:resource="https://w3id.org/SMPDO/Constituent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/SMPDO/ID -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/SMPDO/ID">
@@ -290,18 +316,17 @@
     
 
 
-    <!-- https://w3id.org/SMPDO/Proportion -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/SMPDO/Proportion">
-        <rdfs:domain rdf:resource="https://w3id.org/SMPDO/Component"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://w3id.org/SMPDO/SoftwareName -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/SMPDO/SoftwareName"/>
+    
+
+
+    <!-- https://w3id.org/SMPDO/Type -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/SMPDO/Type">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -313,6 +338,31 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://emmo.info/emmo/middle/materials#EMMO_3397f270_dfc1_4500_8f6f_4d0d85ac5f71 -->
+
+    <owl:Class rdf:about="http://emmo.info/emmo/middle/materials#EMMO_3397f270_dfc1_4500_8f6f_4d0d85ac5f71">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/SMPDO/hasDescriptor"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/SMPDO/MolecularDescriptor"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/SMPDO/hasDescriptor"/>
+                        <owl:allValuesFrom rdf:resource="https://w3id.org/SMPDO/MolecularDescriptor"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This definition states that this object is a non-periodic set of atoms or a set with a finite periodicity. Removing an atom from the state will result in another type of atom_based state. e.g. you cannot remove H from H20 without changing the molecule type (essential). However, you can remove a C from a nanotube (redundant). C60 fullerene is a molecule, since it has a finite periodicity and is made of a well defined number of atoms (essential). A C nanotube is not a molecule, since it has an infinite periodicity (redundant).
+
+An entity is called essential if removing one direct part will lead to a change in entity class. An entity is called redundand if removing one direct part will not lead to a change in entity class.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Molecule</rdfs:label>
+    </owl:Class>
     
 
 
@@ -364,6 +414,20 @@
     <!-- https://w3id.org/SMPDO/Component -->
 
     <owl:Class rdf:about="https://w3id.org/SMPDO/Component">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/SMPDO/hasConstituent"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/SMPDO/Constituent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/SMPDO/hasConstituent"/>
+                        <owl:allValuesFrom rdf:resource="https://w3id.org/SMPDO/Constituent"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Component</rdfs:label>
     </owl:Class>
     
@@ -373,6 +437,27 @@
 
     <owl:Class rdf:about="https://w3id.org/SMPDO/ComputingModel">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Computing Model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/SMPDO/Constituent -->
+
+    <owl:Class rdf:about="https://w3id.org/SMPDO/Constituent">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/SMPDO/hasMolecule"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://emmo.info/emmo/middle/materials#EMMO_3397f270_dfc1_4500_8f6f_4d0d85ac5f71"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/SMPDO/ConstitutentConcentration"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -499,20 +584,6 @@
 
     <owl:Class rdf:about="https://w3id.org/SMPDO/MachineLearningModel">
         <rdfs:subClassOf rdf:resource="https://w3id.org/SMPDO/ComputingModel"/>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/SMPDO/hasDescriptor"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/SMPDO/Descriptor"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="https://w3id.org/SMPDO/hasDescriptor"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/SMPDO/Descriptor"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
