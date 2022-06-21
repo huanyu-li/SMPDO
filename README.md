@@ -32,4 +32,4 @@ SIMAGORA Materials and Product Development Ontology
 - MDO
 - Alvadesc (descriptors)
 - EMMO
-- ---
+- QUDT
