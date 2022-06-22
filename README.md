@@ -25,6 +25,10 @@ SIMAGORA Materials and Product Development Ontology
 - What descriptors are used to describe a molecule structure?
 - What is a component as molecule?
 - What is the proportion of the components in a formulation?
+- What is structure of the molecule?
+- What are the descriptors bound to a molecule?
+- What is the viscosity models used in Elmer?
+- 
 
 ## Background resources
 
