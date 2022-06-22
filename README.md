@@ -28,7 +28,6 @@ SIMAGORA Materials and Product Development Ontology
 - What is structure of the molecule?
 - What are the descriptors bound to a molecule?
 - What is the viscosity models used in Elmer?
-- 
 
 ## Background resources
 
